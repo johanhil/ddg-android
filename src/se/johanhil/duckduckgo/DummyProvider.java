@@ -73,11 +73,18 @@ public class DummyProvider extends ContentProvider {
 			return null;
 		}
 		
+		// if the user is typing a bang, we don't want to suggest other bangs.
+		if (query.startsWith("!"))
+		{
+			return null;
+		}
+		
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
 		
 		// the cursor is usually pointing at the table "suggestions"
 		// which has 4 columns:
 		// _id (integer), display1 (text), query (text), date (long)
+		// TODO perhaps we should display something smart @ display2
 		
 		// we'll simulate this through a MatrixCursor.
 		MatrixCursor cursor = new MatrixCursor(new String[]{SearchManager.SUGGEST_COLUMN_TEXT_1, SearchManager.SUGGEST_COLUMN_QUERY, "_id"});
