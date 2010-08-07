@@ -12,6 +12,8 @@ ddg-android integrates Duck Duck Go to your phone in two ways.
 Download
 --------
 Download ddg-android from market by scanning this QR-code:
+
+
 ![qrcode](http://qrcode.kaywa.com/img.php?s=6&d=market://search%3Fq%3Dpname:se.johanhil.duckduckgo)
 
 
